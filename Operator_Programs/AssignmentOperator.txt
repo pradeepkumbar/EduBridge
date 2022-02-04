@@ -1,0 +1,18 @@
+//Assignment operator
+public class assignoprator {
+
+	public static void main(String[] args) {
+		int num1=199;//assigning integer value
+		float num2=98.76f;//assigning float value
+		char ch='A';//assigning character value
+		double num3=87.67;//assigning double value
+		//Printing assigned values 
+		System.out.println("Assigning integer value to num1 ="+num1);
+		System.out.println("Assigning float value to num2 ="+num2);
+		System.out.println("Assigning character value to ch ="+ch);
+		System.out.println("Assigning double value to num3 ="+num3);
+		
+
+	}
+
+}
