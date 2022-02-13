@@ -1,0 +1,116 @@
+package persistemployee;
+
+import java.io.Serializable;
+
+public class Employee implements Serializable {
+	private int employeeId;
+	private String name;
+	private float appraisalRating;
+	public int getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public float getAppraisalRating() {
+		return appraisalRating;
+	}
+	public void setAppraisalRating(float appraisalRating) {
+		this.appraisalRating = appraisalRating;
+	}
+	public Employee(int employeeId, String name, float appraisalRating) {
+		super();
+		this.employeeId = employeeId;
+		this.name = name;
+		this.appraisalRating = appraisalRating;
+	}
+	/*
+	 * @Override public String toString() { return "Employee [employeeId=" +
+	 * employeeId + ", name=" + name + ", appraisalRating=" + appraisalRating + "]";
+	 * }
+	 */
+	
+	
+	
+	
+
+		
+
+	
+}
+********************************************************************************
+package persistemployee;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+//import java.io.FileWriter;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class EmployeeUtility
+{
+	public boolean addEmployee(String fileName,ArrayList<Employee> employeeList) throws FileNotFoundException, IOException
+	{
+		ObjectOutputStream obj=new ObjectOutputStream(new FileOutputStream(fileName));
+		obj.writeObject(employeeList);
+		obj.close();
+		return true;
+		
+	}
+
+	public Employee viewEmployeeById(String fileName,int employeeId) throws ClassNotFoundException, IOException
+	{
+		ObjectInputStream obj=new ObjectInputStream(new FileInputStream(fileName));
+		List<Employee> list=(List<Employee>) obj.readObject();
+		Iterator<Employee> it=list.iterator();
+		while(it.hasNext())
+		{
+			Employee emp=it.next();
+			if(emp.getEmployeeId()==employeeId)
+			{
+				return emp;
+				
+			}else
+			{
+				continue;
+			}
+			
+		}
+		return null;
+
+		
+	}
+
+}
+********************************************************************************
+package persistemployee;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+		EmployeeUtility emp1=new EmployeeUtility();
+		ArrayList<Employee> arraylist=new ArrayList<Employee>();
+		arraylist.add(new Employee(101,"sam",345.56f));
+		arraylist.add(new Employee(102,"harry",205.56f));
+  		emp1.addEmployee("akio.txt",arraylist );
+  		Employee emp2=emp1.viewEmployeeById("akio.txt", 102);
+  		System.out.println(emp2.getName()+" "+emp2.getEmployeeId()+" "+emp2.getAppraisalRating());
+	}
+
+}

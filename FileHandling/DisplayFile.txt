@@ -1,0 +1,46 @@
+package expectionhandling;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class FileContentDisplayInConsole {
+
+	public static void main(String[] args) throws IOException {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the Name of File: ");
+		String fname =sc.nextLine();
+		File f=new File(fname);
+		if(!f.exists())
+		{
+			f.createNewFile();
+			System.out.print("Enter the file content");
+			String content =sc.nextLine();
+			FileWriter fw=new FileWriter(f);
+			fw.write(content);
+			//fw.close();
+			BufferedReader buf1=new BufferedReader(new FileReader(f));
+			String str;
+			while((str=buf1.readLine())!=null)
+			{
+				System.out.print(str);
+			}
+			fw.close();
+			buf1.close();
+			sc.close();
+		}
+		
+		BufferedReader buf=new BufferedReader(new FileReader(fname));
+		String str;
+		while((str=buf.readLine())!=null)
+		{
+			System.out.print(str);
+		}
+		buf.close();
+		sc.close();
+	}
+
+}
