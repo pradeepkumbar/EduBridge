@@ -1,0 +1,11 @@
+package practice;
+public class demo1 {
+	
+	public static void main(String[] a) 
+	{
+		int a=-10;
+		char b=(char)a;
+		System.out.println(b);
+
+}
+}

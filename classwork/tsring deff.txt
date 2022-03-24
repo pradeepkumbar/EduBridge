@@ -1,0 +1,11 @@
+A thread-safe, mutable sequence of characters. A string buffer is like a String, but can be modified. At any point in time it contains some particular sequence of characters, but the length and content of the sequence can be changed through certain method calls.String buffers are safe for use by multiple threads. The methods are synchronized where necessary so that all the operations on any particular instance behave as if they occur in some serial order that is consistent with the order of the method calls made by each of the individual threads involved.
+
+
+
+
+Removing vowels from StringGiven a method with string input. Write code to remove vowels from evenposition in the string.Include a class UserMainCode with a static method removeEvenVowels whichaccepts a string as input.The return type of the output is string after removing all the vowels.Create a Main class which gets string as an input and call the staticmethod removeEvenVowels present in the UserMainCode.Input and Output Format:Input is a string .Output is a string .Assume the first character is at position 1 in the given string.Sample Input 1:commitmentSample Output 1:cmmitmntSample Input 2:capacitySample Output 2:cpcty
+
+
+
+
+String SplitterWrite a program which would accept a string and a character as adelimiter. Apply the below rules1. Using the delimiter, split the string and store these elements inarray.2. Reverse each element of the string and convert it into lowercase.Include a class UserMainCode with a static method manipulateLiteral whichaccepts the string and character. The return type is the string arrayformed.Create a Class Main which would be used to accept the string andcharacterand call the static method present in UserMainCode.Input and Output Format:Input consists of a string and character.Output consists of a string array.Refer sample output for formatting specifications.Sample Input 1:AAA/bba/ccc/DDD/Sample Output 1:aaaabbcccddd

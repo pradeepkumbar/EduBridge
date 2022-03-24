@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.login&apos; to &apos;ElectricityBillingSistem/src&apos;&#x0D;&#x0A;- Original project: &apos;MiniProject&apos;&#x0D;&#x0A;- Destination element: &apos;ElectricityBillingSistem/src&apos;&#x0D;&#x0A;- Original element: &apos;MiniProject/src/com.login&apos;" description="Copy package" destination="=ElectricityBillingSistem/src" element1="/src&lt;com.login" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1645458004939" version="1.0"/>
+</session>

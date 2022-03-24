@@ -1,0 +1,13 @@
+
+Shape ---id,name,color
+public class Employee extends Object {		private int empID;                            					  													  	private String empName;	private double salary;		public Employee()	{		super();//object class default constructor	}	public Employee(int empID, String empName, double salary) {		super();//calls the object class default constructor		this.empID = empID;		this.empName = empName;		this.salary = salary;	}	@Override	public String toString() {		return "Employee [empID=" + empID + ", empName=" + empName + ", salary=" + salary + "]";	}	}
+
+
+public class Manager extends Employee {	int mId;		Manager(){			}	public Manager(int empID, String empName, double salary,int mId) {		/*this.empID=empID;		this.empName=empName;		this.salary=salary;*/		super(empID, empName, salary);		this.mId = mId;	}	@Override	public String toString() {		return super.toString()+"Manager [mId=" + mId + "]";	}			}
+
+
+ 
+public class AssistantManager extends Manager {	public AssistantManager(int empID, String empName, double salary, int mId) {		// TODO Auto-generated constructor stub		super(empID,empName,salary, mId);	}	}
+
+
+public class TestIn {	public static void main(String[] args) {			Employee e=new Employee();//default constructor of employee		//memory gets allocated and default values will be assigned		//address will be assigned to e variable		System.out.println(e);				Manager manager=new Manager(100,"Nitish",65341.73,200);				System.out.println(manager);//tostring()       		AssistantManager manager1=new AssistantManager(100,"Nitish",65341.73,200);       		System.out.println(manager1);	}}

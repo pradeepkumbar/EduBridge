@@ -1,0 +1,30 @@
+package composation;public class Employee {	String name;	int id;	double salary;		Address address;		public Employee(String name, int id, double salary, Address address)	{		this.name=name;		this.id=id;		this.salary=salary;		this.address=address;	}			@Override	public String toString() {		return "Employee [name=" + name + ", id=" + id + ", salary=" + salary + ", address=" + address + "]";	}	public static void main(String[] ar)	{		Address address=new Address("karnataka","banagalore","India");		Address address1=new Address("karnataka","Mangalore","India");		Employee emp=new Employee("Manisha",1000,67543.87,address1);				System.out.println(emp);	}		}class Address{	String state;	String city;	String country;		Address(String state, String city, String country)	{		this.state=state;		this.city=city;		this.country=country;	}	@Override	public String toString() {		return "Address [state=" + state + ", city=" + city + ", country=" + country + "]";	}	}
+
+
+
+
+
+//import composation.Address;public class Employee {		String name;	int id;	double salary;		class Address 	{		String country;		String  state;		String city;				Address(String state, String city, String country)		{			this.state=state;			this.city=city;			this.country=country;		}		@Override		public String toString() {			return "Address [country=" + country + ", state=" + state + ", city=" + city + "]";		}			}		public Employee(String name, int id, double salary)	{		this.name=name;		this.id=id;		this.salary=salary;		//Address address=	}	Address getAddress()	{		return new Address("kar","bang","india");	}				@Override	public String toString() {		return "Employee [name=" + name + ", id=" + id + ", salary=" + salary + "]";	}	public static void main(String[] args)	{			Employee emp=new Employee("Amol",1234,87362.654);			Address addr=emp.getAddress();			System.out.println(emp+" "+addr);	}				}
+
+
+
+
+
+class Car {	private int carno;	private String name;	Car(int carno, String name)	{		this.carno=carno;		this.name=name;	}			private class Engine	{		String Ename;		String type;		Engine(String Ename, String type)		{			this.Ename=Ename;			this.type=type;		}		public void display()		{			System.out.println("Engine class");		}	}	void diplay()	{		class Engine		{			String Ename;			String type;			Engine(String Ename, String type)			{				this.Ename=Ename;				this.type=type;			}			public void display()			{				System.out.println("Engine class");			}		}		Engine engine=new Engine("sss","Petrol");		System.out.println(carno+" "+name+" "+engine.Ename+" "+engine.type);	}	}
+
+
+
+public class Car {	void drive()	{		System.out.println("try out");	}}
+class Sample{	public void display() {		new Car();			new Car()	{		@Override		public void drive()		{			System.out.println("overriden method in nameless class");		}	}.drive();		}
+
+
+
+public class Car {		public static void main(String[] ar)	{		Eatable eatable=new Eatable()				{					public void eat()					{						System.out.println("hello");					}				};			eatable.eat();		}}interface Eatable{void eat();}
+
+
+
+Anonymous classes enable you to make your code more concise. They enable you to declare and instantiate a class at the same time. They are like local classes except that they do not have a name. Use them if you need to use a local class only once.
+
+
+
+public class Car {		public static void main(String[] ar)	{		int a=100;		Eatable eatable=new Eatable()				{					public void eat()					{						System.out.println("hello");					}					public void sleep()					{						System.out.println("Sleep1");					}				};			eatable.eat();	eatable.sleep();		Eatable eatable1=new Eatable()	{		public void eat()		{			System.out.println("hi");		}		public void sleep()		{			System.out.println("Sleep2");		}	};		eatable1.eat();		eatable1.sleep();		}}interface Eatable{void eat();void sleep();}

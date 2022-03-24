@@ -1,0 +1,25 @@
+package demo;
+
+import java.util.Scanner;
+
+public class demo {
+
+	public static void display(int[] xyz)
+	{
+		for(int[] str: xyz)
+		{
+			System.out.println(str);
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] abc=new int[5];
+		Scanner scan=new Scanner(System.in);
+		for(int i=0;i<abc.length;i++)
+		{
+			abc[i]=scan.nextInt();
+		}
+		display(abc);
+	}
+
+}

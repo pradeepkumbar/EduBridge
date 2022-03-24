@@ -1,0 +1,11 @@
+package practice;
+public class demo1 {
+	
+	public static void main(String[] args) 
+	{
+		float a=0.9876;
+		int b=10;
+		System.out.println(a+b);
+
+}
+}

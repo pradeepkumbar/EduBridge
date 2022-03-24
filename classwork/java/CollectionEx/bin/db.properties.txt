@@ -1,0 +1,4 @@
+username=Pradeep
+password=1234
+port=1
+databasename=love

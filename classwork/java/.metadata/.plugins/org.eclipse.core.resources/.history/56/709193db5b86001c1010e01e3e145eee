@@ -1,0 +1,11 @@
+package practice;
+public class demo1 {
+	
+	public static void main(String[] args) 
+	{
+		int b=10;
+		byte a=(byte)130;
+		System.out.println(a+b);
+
+}
+}
